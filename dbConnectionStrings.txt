@@ -18,7 +18,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 
 
-ODBC
+ODBC  (node.js)
 
 Driver={ODBC Driver 18 for SQL Server};Server=tcp:cosc436.database.windows.net,1433;Database=Ethics_Dashboard;Uid=cosc436;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
 
