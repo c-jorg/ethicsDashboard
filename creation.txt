@@ -1,0 +1,62 @@
+CREATE TABLE FactImages (
+	fact_id INT NOT NULL PRIMARY KEY,
+	ref_id INT NOT NULL,
+	image_id INT NOT NULL,
+	domain_id INT NOT NULL,
+	image_link VARCHAR(255) NOT NULL,
+	page_link VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE DimReferences (
+	reference_id INT NOT NULL PRIMARY KEY,
+	isbn INT NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	page_number INT NOT NULL,
+	reference VARCHAR(1000)
+);
+
+
+CREATE TABLE DimDomain (
+	domain_id INT NOT NULL PRIMARY KEY,
+	domain_name VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE DimTable (
+	table_id INT NOT NULL PRIMARY KEY,
+	image_id INT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	values VARCHAR(255)
+);
+
+
+CREATE TABLE DimImage (
+	image_id INT NOT NULL PRIMARY KEY,
+	file_type VARCHAR(20) NOT NULL,
+	image_type VARCHAR(255),
+	file_size_kb DECIMAL NOT NULL
+);
+
+
+CREATE TABLE DimGraph (
+	graph_id INT NOT NULL PRIMARY KEY,
+	type VARCHAR(255) NOT NULL,
+	values VARCHAR(255),
+	image_id INT NOT NULL
+);
+
+
+CREATE TABLE DimFeatures (
+	feature_id INT NOT NULL PRIMARY KEY,
+	image_id INT NOT NULL,
+	description VARCHAR(1000)
+);
+
+
+CREATE TABLE DimDiagram (
+	diagram_id INT NOT NULL PRIMARY KEY,
+	type VARCHAR(255) NOT NULL,
+	image_id INT NOT NULL,
+	name VARCHAR(255)
+);
